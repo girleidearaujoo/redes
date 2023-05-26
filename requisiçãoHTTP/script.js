@@ -1,6 +1,5 @@
-let httpRequest;
+var httpRequest;
 httpRequest = new XMLHttpRequest();
 
-httpRequest.open('GET', 'https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal', true);
+httpRequest.open('GET', 'http://www.example.org/some.file', true);
 httpRequest.send(null);
-console.log();
