@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hackear Ifal</title>
+    <style>
+        #ajaxButton{
+            background-color: purple;
+            border: none;
+            padding: 50px;
+            font-size: 35px;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 10px;
+            border-bottom: 6px solid pink;
+        }
+    </style>
 </head>
 <body>
-    <script src="script.js"></script>
+    
+    <button id="ajaxButton">
+        Hackear Ifal
+    </button>
+      <script type="text/javascript">
+      (function() {
+        var requesiHTTP;
+        requesiHTTP = new XMLHttpRequest();
+        document.getElementById("ajaxButton").onclick = function () {fazerRequesicao('https://www2.ifal.edu.br/');} 
+      
+        function fazerRequesicao(url) {
+          requesiHTTP.open('GET', url, true);
+          requesiHTTP.send(null);
+          requesiHTTP.onreadystatechange = conferir;
+        }
+      
+        function conferir() {
+          if (requesiHTTP.readyState === 4) {
+            if (requesiHTTP.status === 200) {
+              document.write(requesiHTTP.responseText);
+            } else {
+              document.write('There was a problem with the request.');
+            }
+          }
+        }
+      })();
+      </script>
 </body>
 </html>
