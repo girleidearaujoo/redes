@@ -1,5 +1,5 @@
 var httpRequest;
 httpRequest = new XMLHttpRequest();
 
-httpRequest.open('GET', 'http://www.example.org/some.file', true);
+httpRequest.open('GET', 'https://www2.ifal.edu.br/', true);
 httpRequest.send(null);
